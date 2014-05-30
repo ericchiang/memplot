@@ -35,3 +35,18 @@ $ memplot "python pickle_array.py"
 
 This command produces the following plot:
 ![pickle an array](imgs/python_pickle_array.png)
+
+How does R do? The following script so serialize a similar array is saved under `save_array.r`
+
+```Rscript
+x <- matrix(rnorm(1000,10000),1000,10000)
+Sys.sleep(1)
+save(x,file="x.Rdata")
+```
+
+Time to plot the memory usage:
+```bash
+$ memplot "Rscript save_array.r"
+```
+
+![save an array](imgs/r_save_array.png)
