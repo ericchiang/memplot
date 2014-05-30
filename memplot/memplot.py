@@ -31,6 +31,7 @@ def memplot(cmd,wait_time=0.05):
     plt.plot_date(x=t,y=rss,fmt="b-")
     plt.title(cmd)
     plt.ylabel("Memory Usage (mb)")
+    plt.xlabel("Time")
     plt.grid(True)
     plt.show()
 
