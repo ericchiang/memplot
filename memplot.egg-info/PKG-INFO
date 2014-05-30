@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: memplot
+Version: 0.1.0
+Summary: Plot the mememory usage of a process
+Home-page: https://github.com/EricChiang/memplot
+Author: Eric Chiang
+Author-email: eric@yhathq.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

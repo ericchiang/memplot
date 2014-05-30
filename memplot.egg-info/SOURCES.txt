@@ -1,0 +1,9 @@
+setup.py
+bin/memplot
+memplot/__init__.py
+memplot/memplot.py
+memplot.egg-info/PKG-INFO
+memplot.egg-info/SOURCES.txt
+memplot.egg-info/dependency_links.txt
+memplot.egg-info/requires.txt
+memplot.egg-info/top_level.txt
