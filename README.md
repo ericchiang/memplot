@@ -30,7 +30,7 @@ import time
 
 x = np.random.randn(1000,10000)
 time.sleep(1)
-p = pickle.dumps(x)
+pickle.dump(x,open("x.pk","w"))
 ```
 
 To plot memory usage run:
