@@ -13,6 +13,9 @@ $ git clone https://github.com/EricChiang/memplot.git
 $ cd memplot
 $ python setup.py install
 ```
+pypi:
+
+_Coming soon_
 
 Usage
 -----
