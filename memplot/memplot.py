@@ -15,15 +15,12 @@ def memplot(cmd,wait_time=0.05):
     usage = []
     p = subprocess.Popen(cmd,shell=True)
     util_process = psutil.Process(p.pid)
-    while True:
-        try:
-            stats = util_process.memory_info()
-            usage.append((datetime.now(),
-                          stats.rss,
-                          stats.vms,))
-            sleep(wait_time)
-        except:
-            break
+    while util_process.status() != psutil.STATUS_ZOMBIE:
+        stats = util_process.memory_info()
+        usage.append((datetime.now(),
+                      stats.rss,
+                      stats.vms,))
+        sleep(wait_time)
 
     t,rss,vms = zip(*usage)
 
