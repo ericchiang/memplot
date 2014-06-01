@@ -13,7 +13,7 @@ __all__ = ["memplot"]
 
 def memplot(cmd,wait_time=0.05):
     usage = []
-    p = subprocess.Popen(cmd,shell=True)
+    p = subprocess.Popen(cmd.split())
     util_process = psutil.Process(p.pid)
     while util_process.status() != psutil.STATUS_ZOMBIE:
         stats = util_process.memory_info()
