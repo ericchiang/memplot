@@ -16,5 +16,5 @@ Options:
 from docopt import docopt
 from memplot import memplot
 
-args = docopt(__doc__, version="memplot 0.1.0")
+args = docopt(__doc__, version="memplot 0.1.1")
 memplot(args["<cmd>"],float(args["--cycle"]))
