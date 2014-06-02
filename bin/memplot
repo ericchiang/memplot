@@ -21,7 +21,7 @@ from memplot import memplot
 
 t = 0.05
 cmd = []
-version = "0.2.0"
+version = "0.3.0"
 
 if len(sys.argv) == 1:
     print(__doc__)
