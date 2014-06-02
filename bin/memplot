@@ -3,18 +3,45 @@
 """memplot
 
 Usage:
-  memplot [--cycle=<delta>] <cmd>
+  memplot [(-t | --time) step] <cmd>
   memplot (-h | --help)
   memplot --version
 
 Options:
+  -t --time        Timestep (in seconds) between each memory usage
+                     query.  Defaults to 0.05 seconds.
   -h --help        Show this screen.
-  --cycle=<delta>  Time (in sec) between each memory query cycle [default: 0.05].
-  --version        Show version.
+  -v --version     Show version.
 """
 
-from docopt import docopt
+from __future__ import print_function
+import sys
+
 from memplot import memplot
 
-args = docopt(__doc__, version="memplot 0.1.1")
-memplot(args["<cmd>"],float(args["--cycle"]))
+t = 0.05
+cmd = []
+version = "0.2.0"
+
+if len(sys.argv) == 1:
+    print(__doc__)
+    sys.exit()
+elif sys.argv[1] == '-h' or sys.argv[1] == '--help':
+    print(__doc__)
+    sys.exit()
+elif sys.argv[1] == '-v' or sys.argv[1] == '--version':
+    print("memplot %s" % version)
+    sys.exit()
+elif sys.argv[1] == '-t' or sys.argv[1] == '--time':
+    try:
+        t = float(sys.argv[2])
+        cmd = sys.argv[3:]
+    except:
+        err_msg = "  [ERROR] Timestep argument must be" + \
+                  " followed by a numeric value"
+        print(err_msg,file=sys.stderr)
+        sys.exit(2)
+else:
+    cmd = sys.argv[1:] 
+
+memplot(cmd,t)

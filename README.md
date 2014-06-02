@@ -35,7 +35,7 @@ pickle.dump(x,open("x.pk","w"))
 
 To plot memory usage run:
 ```bash
-$ memplot "python pickle_array.py"
+$ memplot python pickle_array.py
 ```
 
 This command produces the following plot:
@@ -51,7 +51,7 @@ save(x,file="x.Rdata")
 
 Time to plot the memory usage:
 ```bash
-$ memplot "Rscript save_array.r"
+$ memplot Rscript save_array.r
 ```
 
 ![save an array](imgs/r_save_array.png)
