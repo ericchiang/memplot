@@ -13,6 +13,6 @@ setup(
     scripts=['bin/memplot'],
     install_requires=[
         "matplotlib==1.1.1",
-        "psutil==2.1.1"
+        "psutil==5.6.6"
     ]
 )
